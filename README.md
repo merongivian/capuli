@@ -14,7 +14,7 @@ defmodule AtomEntry do
   element :title
   # The :as argument makes this available through entry.author instead of entry.name
   element :name, as: :author
-  # Floki is case insensitive, so it's not necessary to add the element name as feedburner:origLink
+  # Element name is case insensitive, so it's not necessary to add the element name as feedburner:origLink
   element :"feedburner:origlink", as: :url
   element :published
 end
