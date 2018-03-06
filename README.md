@@ -71,8 +71,7 @@ If an element is defined in the source but is blank (e.g., `<pubDate></pubDate>`
 
 ## Installation
 
-The package can be installed
-by adding `capuli` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `capuli` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -85,3 +84,11 @@ end
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/capuli](https://hexdocs.pm/capuli).
+
+## Tasks
+
+- [x] Basic DSL
+- [ ] `:default` option
+- [ ] Auto parsing (without specifying a module)
+- [ ] **Maybe**: Type coercion
+- [ ] **Maybe**: Streaming for big XML files
