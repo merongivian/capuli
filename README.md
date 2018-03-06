@@ -1,5 +1,7 @@
 # Capuli
 
+[![Build Status](https://travis-ci.org/merongivian/capuli.svg?branch=master)](https://travis-ci.org/merongivian/capuli/)
+
 Declarative XML parsing library inspired by Ruby's [Sax Machine](https://github.com/pauldix/sax-machine), backed by Floki
 
 This is used by [Feedraptor](https://github.com/merongivian/feedraptor) for parsing feeds (RSS, Atom, etc.)
