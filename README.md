@@ -1,6 +1,7 @@
 # Capuli
 
 [![Build Status](https://travis-ci.org/merongivian/capuli.svg?branch=master)](https://travis-ci.org/merongivian/capuli/)
+[![Deps Status](https://beta.hexfaktor.org/badge/all/github/merongivian/capuli.svg)](https://beta.hexfaktor.org/github/merongivian/capuli)
 
 Declarative XML parsing library inspired by Ruby's [Sax Machine](https://github.com/pauldix/sax-machine), backed by Floki
 
