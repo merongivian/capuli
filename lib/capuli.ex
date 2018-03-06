@@ -115,9 +115,7 @@ defmodule Capuli do
     if opts[:module], do: opts[:module].parse(value), else: value
   end
 
-  defp value_extractor(nil), do: nil
-  defp value_extractor(nil, opts), do: nil
-  defp value_extractor(value, opts \\ []) do
+  defp value_extractor(value, opts) do
     if opts[:value] do
       value
       |> Floki.attribute(Atom.to_string opts[:value])
@@ -140,8 +138,9 @@ defmodule Capuli do
     name <> create_attributes_selector(attributes)
   end
 
+  defp create_attributes_selector(attributes)
   defp create_attributes_selector(nil), do: ""
-  defp create_attributes_selector(attributes \\ []) do
+  defp create_attributes_selector(attributes) do
     Enum.reduce attributes, "", fn({name, value}, selector) ->
       selector <> ~s([#{name}="#{value}"])
     end
