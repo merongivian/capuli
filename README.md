@@ -93,3 +93,7 @@ be found at [https://hexdocs.pm/capuli](https://hexdocs.pm/capuli).
 - [ ] Auto parsing (without specifying a module)
 - [ ] **Maybe**: Type coercion
 - [ ] **Maybe**: Streaming for big XML files
+
+## License
+
+Capuli is under MIT license. Check the `LICENSE` file for more details.
