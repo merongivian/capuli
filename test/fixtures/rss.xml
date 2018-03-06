@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+  <channel>
+    <title>W3Schools Home Page</title>
+    <link>https://www.w3schools.com</link>
+    <description>Free web building tutorials</description>
+
+    <tag:withnamespace>with namespace</tag:withnamespace>
+    <tag:with-namespace-and-dashes>with namespace and dashes</tag:with-namespace-and-dashes>
+
+    <withAttributeValue val="with attribute value">other value</withAttributeValue>
+
+    <withMatchedAttributes val="with not all matched attributes" rel="primary" type="text/html">with not all the attributes</withMatchedAttributes>
+    <withMatchedAttributes val="with matched attributes" rel="alternate" type="text/html">with matched attributes</withMatchedAttributes>
+
+    <differentTagTwo>second tag</differentTagTwo>
+    <differentTagThree>third tag</differentTagThree>
+    <differentTagOne>first tag</differentTagOne>
+
+    <image>
+      <title>image title</title>
+    </image>
+
+    <item>
+      <title>RSS Tutorial</title>
+      <link>https://www.w3schools.com/xml/xml_rss.asp</link>
+      <description>New RSS tutorial on W3Schools</description>
+    </item>
+    <item>
+      <title>XML Tutorial</title>
+      <link>https://www.w3schools.com/xml</link>
+      <description>New XML tutorial on W3Schools</description>
+    </item>
+  </channel>
+</rss>
