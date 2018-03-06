@@ -10,7 +10,9 @@ defmodule Capuli.MixProject do
       start_permanent: Mix.env() == :prod,
 			description: description(),
       package: package(),
-      deps: deps()
+      deps: deps(),
+      name: "Capuli",
+      source_url: "https://github.com/merongivian/capuli"
     ]
   end
 
