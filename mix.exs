@@ -40,9 +40,9 @@ defmodule Capuli.MixProject do
 
   defp package do
     [name: :capuli,
-     files: ["lib", "priv", "mix.exs", "README*", "readme*", "LICENSE*", "license*"],
+     files: ["lib", "mix.exs", "README*"],
      maintainers: ["Jose Añasco"],
-     licenses: ["Apache 2.0"],
+     licenses: ["MIT"],
      links: %{"GitHub" => "https://github.com/merongivian/capuli"}]
   end
 end
