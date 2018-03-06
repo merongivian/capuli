@@ -40,8 +40,8 @@ defmodule Capuli do
 
   Capuli sets a `parse` method that is used for processing the xml:
 
-    xml = "<rss>.....<rss>"
-    Atom.parse(xml)
+      xml = "<rss>.....<rss>"
+      Atom.parse(xml)
   """
 
   @doc false
@@ -91,7 +91,7 @@ defmodule Capuli do
 
   `:as`, `:value`, `:with`, `module`
 
-  See the "Shared options" section at the module documentation for more info.
+  See the "Element(s) options" section at the module documentation for more info.
   """
   defmacro element(name, opts \\ []) do
     quote bind_quoted: [name: name, opts: opts] do
@@ -106,7 +106,7 @@ defmodule Capuli do
 
   `:as`, `:value`, `:with`, `module`
 
-  See the "Shared options" section at the module documentation for more info.
+  See the "Element(s) options" section at the module documentation for more info.
   """
   defmacro elements(name, opts \\ []) do
     quote bind_quoted: [name: name, opts: opts] do
