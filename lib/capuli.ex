@@ -1,4 +1,49 @@
 defmodule Capuli do
+  @moduledoc """
+  Capuli parses xml files through a DSL defined in a module, this module will
+  be the parser. Use `element` if you want to fetch one tag and `elements` for
+  multiple tags.
+
+  Here is a parser for an Atom entry:
+
+      defmodule AtomEntry do
+        use Capuli
+
+        element :title
+        element :description
+        element :link, as: :url, value: :href, with: [
+          type: "text/html"
+        ]
+        elements :images
+      end
+
+  You can use the `AtomEntry` inside other parsers as well:
+
+      defmodule Atom do
+        use Capuli
+
+        element :link
+        elements :entry, as: :entries, module: AtomEntry
+      end
+
+  ## Element(s) Options
+
+    * `:as` - the key used for setting the name of the element
+
+    * `:value` - retrieves the value from an specific attribute, it
+      takes the value from the tag by default
+
+    * `:with` - search tags with specific attributes, the tag
+      must have all attributes
+
+    * `:module` - used for parsing the extracted value
+
+  Capuli sets a `parse` method that is used for processing the xml:
+
+    xml = "<rss>.....<rss>"
+    Atom.parse(xml)
+  """
+
   @doc false
   defmacro __using__(_) do
     quote do
@@ -13,6 +58,9 @@ defmodule Capuli do
   @doc false
   defmacro __before_compile__(_env) do
     quote do
+      @doc """
+      Parses an xml through the elements defined previously
+      """
       def parse(source) do
         parsed_element_definitions =
          Capuli.execute_definitions(
@@ -36,20 +84,37 @@ defmodule Capuli do
     end
   end
 
-  @doc false
+  @doc """
+  Defines the element that will be extracted
+
+  ## Options
+
+  `:as`, `:value`, `:with`, `module`
+
+  See the "Shared options" section at the module documentation for more info.
+  """
   defmacro element(name, opts \\ []) do
     quote bind_quoted: [name: name, opts: opts] do
       Module.put_attribute(__MODULE__, :element_definitions, [name, opts])
     end
   end
 
-  @doc false
+  @doc """
+  Defines the element that will be extracted
+
+  ## Options
+
+  `:as`, `:value`, `:with`, `module`
+
+  See the "Shared options" section at the module documentation for more info.
+  """
   defmacro elements(name, opts \\ []) do
     quote bind_quoted: [name: name, opts: opts] do
       Module.put_attribute(__MODULE__, :elements_definitions, [name, opts])
     end
   end
 
+  @doc false
   def execute_definitions(source, definitions, extractor) do
     Enum.reduce definitions, %{}, fn(extractor_attributes, parsed_source) ->
       extracted_element = apply(
@@ -71,11 +136,13 @@ defmodule Capuli do
     end
   end
 
+  @doc false
   def get_element(source, name, opts \\ []) do
     value = get_element_value(source, name, Keyword.drop(opts, [:as]))
     %{opts[:as] || name => value}
   end
 
+  @doc false
   def get_elements(source, name, opts \\ []) do
     get_values = fn(parsed_elements, opts) ->
       if opts[:module] do
