@@ -7,6 +7,18 @@ Declarative XML parsing library inspired by Ruby's [Sax Machine](https://github.
 
 This is used by [Feedraptor](https://github.com/merongivian/feedraptor) for parsing feeds (RSS, Atom, etc.)
 
+## Installation
+
+The package can be installed by adding `capuli` to your list of dependencies in `mix.exs`:
+
+```elixir
+def deps do
+  [
+    {:capuli, "~> 0.2.0"}
+  ]
+end
+```
+
 ## Examples
 
 Add `use Capuli` in any module and define properties to parse:
@@ -69,22 +81,6 @@ the `element` declarations in the code is unimportant. The order they are encoun
 document determines the value assigned to the alias.
 
 If an element is defined in the source but is blank (e.g., `<pubDate></pubDate>`), it is ignored, and non-empty one is picked.
-
-## Installation
-
-The package can be installed by adding `capuli` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:capuli, "~> 0.2.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/capuli](https://hexdocs.pm/capuli).
 
 ## Tasks
 
