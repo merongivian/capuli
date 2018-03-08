@@ -1,7 +1,7 @@
 defmodule Capuli do
   @moduledoc """
   Capuli parses xml files through a DSL defined in a module, this module will
-  be the parser. Use `element` if you want to fetch one tag and `elements` for
+  be the parser. Use `element` if you want declare one tag and `elements` for
   multiple tags.
 
   Here is a parser for an Atom entry:
@@ -26,7 +26,7 @@ defmodule Capuli do
         elements :entry, as: :entries, module: AtomEntry
       end
 
-  ## Element(s) Options
+  ## Element(s) Options:
 
     * `:as` - the key used for setting the name of the element
 
@@ -85,7 +85,7 @@ defmodule Capuli do
   @doc """
   Defines the element that will be extracted
 
-  ## Options
+  ## Options:
 
   `:as`, `:value`, `:with`, `module`
 
@@ -98,9 +98,9 @@ defmodule Capuli do
   end
 
   @doc """
-  Defines the element that will be extracted
+  Defines the elements that will be extracted
 
-  ## Options
+  ## Options:
 
   `:as`, `:value`, `:with`, `module`
 
