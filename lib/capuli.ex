@@ -58,9 +58,7 @@ defmodule Capuli do
   @doc false
   defmacro __before_compile__(_env) do
     quote do
-      @doc """
-      Parses an xml through the elements defined previously
-      """
+      @doc false
       def parse(source) do
         parsed_element_definitions =
          Capuli.execute_definitions(
