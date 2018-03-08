@@ -14,7 +14,7 @@ The package can be installed by adding `capuli` to your list of dependencies in 
 ```elixir
 def deps do
   [
-    {:capuli, "~> 0.2.0"}
+    {:capuli, "~> 0.3.0"}
   ]
 end
 ```
